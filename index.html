@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noureen Tarek — Data Analyst</title>
+<meta name="description" content="Data Analyst specializing in Power BI dashboards, business intelligence, and reporting. Portfolio of workforce, operations, and retail analytics case studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0A1930;
+    --navy-800:#0F2242;
+    --navy-700:#16305C;
+    --ink:#1C2330;
+    --slate:#5B6472;
+    --paper:#F7F7F5;
+    --white:#FFFFFF;
+    --line:#E2E4E9;
+    --accent:#8C2F39;
+    --accent-light:#F5E6E4;
+    --accent-dim:#B5636B;
+    --radius:2px;
+    --maxw:1180px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    color:var(--navy-900);
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(247,247,245,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:18px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:18px;
+    letter-spacing:0.02em;
+    color:var(--navy-900);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo .mark{
+    width:28px;height:28px;
+    border:1.5px solid var(--navy-900);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    font-weight:500;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:36px;
+    align-items:center;
+  }
+  nav a.navlink{
+    font-size:14px;
+    font-weight:500;
+    color:var(--slate);
+    transition:color 0.2s;
+    position:relative;
+  }
+  nav a.navlink:hover{color:var(--navy-900);}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 20px;
+    font-size:13px;
+    font-weight:600;
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:0.02em;
+    border:1.5px solid var(--navy-900);
+    color:var(--navy-900);
+    background:transparent;
+    cursor:pointer;
+    transition:all 0.2s ease;
+  }
+  .btn:hover{background:var(--navy-900);color:var(--white);}
+  .btn-solid{
+    background:var(--navy-900);
+    color:var(--white);
+  }
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
+  .navbtn{padding:9px 18px;font-size:12.5px;}
+  .mobile-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:100px 0 70px;
+    overflow:hidden;
+  }
+  .hero-grid-bg{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:22px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--accent);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(36px,5.2vw,60px);
+    line-height:1.08;
+    margin-bottom:24px;
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    font-weight:700;
+    color:var(--accent);
+  }
+  .hero p.lede{
+    font-size:18px;
+    color:var(--slate);
+    max-width:52ch;
+    margin-bottom:36px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:16px;
+    margin-bottom:64px;
+    flex-wrap:wrap;
+  }
+  .btn-lg{padding:14px 26px;font-size:14px;}
+
+  .kpi-strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+    max-width:900px;
+    position:relative;
+    z-index:2;
+  }
+  .kpi{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:20px 22px;
+    background:rgba(255,255,255,0.5);
+  }
+  .kpi .num{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:28px;
+    color:var(--navy-900);
+    display:block;
+  }
+  .kpi .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-top:4px;
+    display:block;
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:56px;
+    gap:24px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:24px;
+  }
+  .section-head .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:10px;
+    display:block;
+  }
+  .section-head h2{
+    font-size:clamp(26px,3vw,36px);
+  }
+  .section-head .sub{
+    color:var(--slate);
+    max-width:38ch;
+    font-size:15px;
+    text-align:right;
+  }
+  @media(max-width:720px){
+    .section-head{flex-direction:column;align-items:flex-start;}
+    .section-head .sub{text-align:left;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.4fr;
+    gap:64px;
+    align-items:start;
+  }
+  .avatar{
+    width:120px;height:120px;
+    background:var(--navy-900);
+    color:var(--white);
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:36px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:24px;
+  }
+  .about-meta div{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+  .about-meta div span:first-child{
+    color:var(--slate);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .about-body p{
+    font-size:17px;
+    color:var(--ink);
+    margin-bottom:20px;
+    max-width:60ch;
+  }
+  .about-body p.lede2{
+    font-size:21px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:500;
+    color:var(--navy-900);
+    line-height:1.4;
+    margin-bottom:28px;
+  }
+  .skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:28px;
+  }
+  .skill-tags span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    padding:7px 13px;
+    border:1px solid var(--line);
+    color:var(--navy-700);
+    background:var(--white);
+  }
+
+  /* ---------- WORK / CASE STUDIES ---------- */
+  .case{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+    padding:56px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .case:first-of-type{padding-top:0;}
+  .case:last-of-type{border-bottom:none;padding-bottom:0;}
+  .case.reverse{grid-template-columns:0.95fr 1.05fr;}
+  .case.reverse .case-media{order:2;}
+  .case.reverse .case-copy{order:1;}
+
+  .case-media{position:relative;}
+  .case-media .shot-main{
+    border:1px solid var(--line);
+    box-shadow:0 24px 48px -24px rgba(10,25,48,0.25);
+  }
+  .case-media .shot-sub{
+    position:absolute;
+    width:52%;
+    border:4px solid var(--paper);
+    box-shadow:0 16px 32px -12px rgba(10,25,48,0.35);
+    bottom:-32px;
+    right:-28px;
+  }
+  @media(max-width:900px){
+    .case-media .shot-sub{display:none;}
+  }
+
+  .case-copy .domain-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:14px;
+    display:block;
+  }
+  .case-copy h3{
+    font-size:28px;
+    margin-bottom:14px;
+    line-height:1.2;
+  }
+  .case-copy .tools{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:22px;
+  }
+  .case-copy .tools span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    padding:4px 9px;
+    background:var(--white);
+    border:1px solid var(--line);
+    color:var(--slate);
+  }
+  .case-block{margin-bottom:18px;}
+  .case-block h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--navy-700);
+    margin-bottom:6px;
+  }
+  .case-block p{
+    font-size:15px;
+    color:var(--ink);
+  }
+  .case-block.insight{
+    background:var(--accent-light);
+    border-left:2px solid var(--accent);
+    padding:14px 18px;
+  }
+  .case-block.insight h4{color:var(--accent);}
+
+  /* ---------- SKILLS SECTION ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .skill-col{
+    background:var(--paper);
+    padding:32px;
+  }
+  .skill-col h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--accent);
+    margin-bottom:18px;
+  }
+  .skill-col ul{list-style:none;}
+  .skill-col li{
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+    display:flex;
+    justify-content:space-between;
+  }
+  .skill-col li:last-child{border-bottom:none;}
+  @media(max-width:800px){
+    .skills-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CERTS ---------- */
+  .cert-row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .cert-item{
+    background:var(--white);
+    padding:22px 26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .cert-item .name{font-size:14.5px;font-weight:500;color:var(--ink);}
+  .cert-item .issuer{font-size:12.5px;color:var(--slate);margin-top:3px;}
+  .cert-item .date{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--accent);
+    white-space:nowrap;
+  }
+  @media(max-width:700px){.cert-row{grid-template-columns:1fr;}}
+
+  /* ---------- CONTACT ---------- */
+  .contact-section{
+    background:var(--navy-900);
+    color:var(--white);
+    padding:110px 0;
+    text-align:center;
+  }
+  .contact-section .eyebrow{color:var(--accent-dim);justify-content:center;}
+  .contact-section .eyebrow::before{background:var(--accent-dim);}
+  .contact-section h2{
+    color:var(--white);
+    font-size:clamp(30px,4.4vw,48px);
+    max-width:16ch;
+    margin:0 auto 22px;
+    line-height:1.1;
+  }
+  .contact-section p{
+    color:#B9C2D4;
+    max-width:48ch;
+    margin:0 auto 40px;
+    font-size:17px;
+  }
+  .contact-cta{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:56px;
+  }
+  .contact-section .btn{border-color:rgba(255,255,255,0.35);color:var(--white);}
+  .contact-section .btn:hover{background:var(--white);color:var(--navy-900);}
+  .contact-section .btn-solid{background:var(--accent);border-color:var(--accent);}
+  .contact-section .btn-solid:hover{background:var(--white);color:var(--navy-900);border-color:var(--white);}
+
+  .contact-links{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:#8B96AC;
+    border-top:1px solid rgba(255,255,255,0.12);
+    padding-top:28px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .contact-links a{transition:color 0.2s;}
+  .contact-links a:hover{color:var(--white);}
+
+  footer{
+    background:var(--navy-900);
+    color:#6C7890;
+    text-align:center;
+    font-size:12.5px;
+    padding:24px 0 40px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* ---------- REVEAL ANIMATION ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- MOBILE NAV ---------- */
+  @media(max-width:840px){
+    nav ul{
+      position:fixed;
+      top:64px;left:0;right:0;
+      background:var(--paper);
+      flex-direction:column;
+      align-items:flex-start;
+      padding:24px 32px;
+      border-bottom:1px solid var(--line);
+      display:none;
+      gap:20px;
+    }
+    nav ul.open{display:flex;}
+    .mobile-toggle{
+      display:flex;
+      flex-direction:column;
+      gap:5px;
+      background:none;border:none;cursor:pointer;
+      padding:6px;
+    }
+    .mobile-toggle span{width:22px;height:2px;background:var(--navy-900);}
+    .nav-desktop-cta{display:none;}
+  }
+  @media(min-width:841px){
+    .mobile-toggle{display:none;}
+  }
+
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .case, .case.reverse{grid-template-columns:1fr;}
+    .case.reverse .case-media, .case.reverse .case-copy{order:initial;}
+    .kpi-strip{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="logo"><span class="mark">NT</span> NOUREEN TAREK</a>
+    <button class="mobile-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <nav>
+      <ul id="navList">
+        <li><a class="navlink" href="#about">About</a></li>
+        <li><a class="navlink" href="#work">Work</a></li>
+        <li><a class="navlink" href="#skills">Skills</a></li>
+        <li><a class="navlink" href="#contact">Contact</a></li>
+        <li class="nav-desktop-cta"><a class="btn navbtn" href="assets/Noureen_Tarek_CV.pdf" download>Download CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" style="padding-top:110px;">
+    <svg class="hero-grid-bg" id="heroChart" viewBox="0 0 1180 520" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- gridlines -->
+      <g stroke="#16305C" stroke-opacity="0.08">
+        <line x1="0" y1="60" x2="1180" y2="60"/>
+        <line x1="0" y1="140" x2="1180" y2="140"/>
+        <line x1="0" y1="220" x2="1180" y2="220"/>
+        <line x1="0" y1="300" x2="1180" y2="300"/>
+        <line x1="0" y1="380" x2="1180" y2="380"/>
+        <line x1="0" y1="460" x2="1180" y2="460"/>
+      </g>
+      <!-- animated chart line -->
+      <path id="chartPath" d="M 620 380 L 700 300 L 760 340 L 830 220 L 900 260 L 970 150 L 1040 190 L 1110 110 L 1180 150"
+        fill="none" stroke="#8C2F39" stroke-width="2.5" stroke-opacity="0.55" />
+      <g id="chartDots" fill="#8C2F39" fill-opacity="0.55"></g>
+    </svg>
+
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="eyebrow reveal">Data Analyst · Business Intelligence</div>
+        <h1 class="reveal">I turn raw data into <em>decisions people can act on.</em></h1>
+        <p class="lede reveal">I build Power BI dashboards and reporting systems that go beyond charts — surfacing the specific insight behind the numbers and the business decision it should drive. Based in Cairo, working with teams anywhere.</p>
+        <div class="hero-cta reveal">
+          <a href="#work" class="btn btn-solid btn-lg">View Case Studies</a>
+          <a href="assets/Noureen_Tarek_CV.pdf" download class="btn btn-lg">Download CV</a>
+        </div>
+      </div>
+
+      <div class="kpi-strip reveal">
+        <div class="kpi">
+          <span class="num mono">3</span>
+          <span class="label">Featured Dashboards</span>
+        </div>
+        <div class="kpi">
+          <span class="num mono">500K+</span>
+          <span class="label">Data Points Modeled</span>
+        </div>
+        <div class="kpi">
+          <span class="num mono">6</span>
+          <span class="label">BI &amp; Analytics Certifications</span>
+        </div>
+        <div class="kpi">
+          <span class="num mono">4</span>
+          <span class="label">Core Tools — Excel, Power BI, Python, SQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag">About</span>
+          <h2>The analyst behind the dashboards</h2>
+        </div>
+        <p class="sub">Business Information Systems background, Power BI at the core, and a habit of asking "so what should we do about it?"</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="avatar">NT</div>
+          <div class="about-meta">
+            <div><span>Location</span><span>New Cairo, Egypt</span></div>
+            <div><span>Role</span><span>Operational Sales Analyst</span></div>
+            <div><span>Focus</span><span>Power BI · SQL · Python</span></div>
+            <div><span>Education</span><span>B.B.A., Georgia State Univ.</span></div>
+          </div>
+        </div>
+
+        <div class="about-body reveal">
+          <p class="lede2">I make data easy to read — so people can act on facts, not guesswork, and make the decisions their business actually needs.</p>
+          <p>I'm currently an Operational Sales Analyst at Arab Business Machine, where I clean and model sales data, build Power BI dashboards for leadership, and maintain the databases behind daily reporting — turning scattered numbers into something the business can act on.</p>
+          <p>My toolkit centers on Power BI (DAX, Power Query, data modeling), Excel, and Python (Pandas, NumPy) for analysis, with a Business Information Systems degree underneath it. I recently completed a UI/UX design bootcamp too, which shows in how I lay out a dashboard — every report should be easy to read before it's ever explained out loud.</p>
+          <p>What I'm looking for now is a role where I can do more of that: help a team make better decisions with their data while growing my own skills and portfolio along the way. I want to be part of a business's growth, not just its reporting — in the room when decisions get made, not just producing the numbers behind them.</p>
+          <div class="skill-tags">
+            <span>Power BI</span>
+            <span>DAX &amp; Power Query</span>
+            <span>Data Modeling</span>
+            <span>SQL</span>
+            <span>Python (Pandas/NumPy)</span>
+            <span>Excel (Advanced)</span>
+            <span>KPI Reporting</span>
+            <span>Market Research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORK ================= -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag">Selected Work</span>
+          <h2>Three dashboards, three business questions</h2>
+        </div>
+        <p class="sub">Each project below is built around a real decision the report needs to support — not just what the data shows, but what to do next.</p>
+      </div>
+
+      <!-- CASE 1: HR -->
+      <div class="case reveal">
+        <div class="case-media">
+          <img class="shot-main" src="assets/hr_overview.jpg" alt="HR Workforce Overview dashboard in Power BI showing employee count, average age, department count, and performance/salary breakdown by gender">
+          <img class="shot-sub" src="assets/hr_attendance.jpg" alt="HR attendance dashboard showing attendance flag by date, arrival category distribution, and employee check-in table">
+        </div>
+        <div class="case-copy">
+          <span class="domain-tag">Workforce Analytics</span>
+          <h3>HR Workforce &amp; Attendance Overview</h3>
+          <div class="tools">
+            <span>Power BI</span><span>DAX</span><span>Data Modeling</span><span>Drill-through Pages</span>
+          </div>
+          <div class="case-block">
+            <h4>The Ask</h4>
+            <p>An HR team tracking 498 employees across 6 departments needed one place to monitor headcount, performance, pay, and attendance — instead of pulling separate spreadsheets for each question.</p>
+          </div>
+          <div class="case-block">
+            <h4>What I Built</h4>
+            <p>A multi-page Power BI report (Home, Attendance, Performance, Trends) with department and seniority-group slicers, attendance-flag tracking by date, and side-by-side performance/salary comparisons by gender.</p>
+          </div>
+          <div class="case-block insight">
+            <h4>Highlighted Data</h4>
+            <p>Arrival patterns split almost evenly across Late, Slightly Late, and On Time (33% each) — meaning lateness wasn't an outlier problem, it was a structural one worth addressing at the policy level, not employee by employee.</p>
+          </div>
+          <div class="case-block">
+            <h4>Value Delivered</h4>
+            <p>Gives HR leadership a single screen to flag attendance risk early, compare performance and pay equity by department, and back headcount conversations with real numbers instead of anecdotes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 2: Uber -->
+      <div class="case reverse reveal">
+        <div class="case-media">
+          <img class="shot-main" src="assets/uber_overview.jpg" alt="Uber ride analytics dashboard showing completed bookings, lost bookings, revenue, bookings overview trend, and revenue by vehicle type">
+          <img class="shot-sub" src="assets/uber_vehicle_breakdown.jpg" alt="Uber vehicle type breakdown table showing customer count, revenue, and completed bookings by vehicle type">
+        </div>
+        <div class="case-copy">
+          <span class="domain-tag">Operations &amp; Revenue</span>
+          <h3>Ride-Hailing Operations Dashboard</h3>
+          <div class="tools">
+            <span>Power BI</span><span>DAX</span><span>Time Intelligence</span><span>Geo Analysis</span>
+          </div>
+          <div class="case-block">
+            <h4>The Ask</h4>
+            <p>Model end-to-end ride operations — bookings, cancellations, revenue, and rider behavior — across six vehicle types, so ops and pricing teams can see where demand and revenue actually come from.</p>
+          </div>
+          <div class="case-block">
+            <h4>What I Built</h4>
+            <p>A multi-page report (Overview, Vehicle, Revenue, Rider, Location) with completed/cancelled/incomplete breakdowns, monthly booking trends, top pickup/drop-off locations, and a full revenue table by vehicle type.</p>
+          </div>
+          <div class="case-block insight">
+            <h4>Highlighted Data</h4>
+            <p>Auto led every vehicle type in total revenue ($13M) despite a lower fare than Uber XL — completed bookings, not premium pricing, were the actual revenue driver. Meanwhile 57K lost bookings signaled a supply gap worth investigating.</p>
+          </div>
+          <div class="case-block">
+            <h4>Value Delivered</h4>
+            <p>Gives operations and pricing teams a fast read on where to prioritize driver supply, which vehicle segment to protect, and where lost demand is concentrated geographically.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 3: Retail -->
+      <div class="case reveal">
+        <div class="case-media">
+          <img class="shot-main" src="assets/store_overview.jpg" alt="Retail sales dashboard showing sum of sales, max of sales, number of orders, sales by product category, and revenue trend by year">
+          <img class="shot-sub" src="assets/store_influencers.jpg" alt="Power BI Key Influencers analysis showing that unit price above $138.75 is the strongest driver of a sales increase">
+        </div>
+        <div class="case-copy">
+          <span class="domain-tag">Retail &amp; Pricing</span>
+          <h3>Retail Sales &amp; Pricing Insight Report</h3>
+          <div class="tools">
+            <span>Power BI</span><span>Key Influencers (AI)</span><span>DAX</span><span>Customer Analytics</span>
+          </div>
+          <div class="case-block">
+            <h4>The Ask</h4>
+            <p>Move a four-year retail order dataset from "what happened" reporting to "why it happened" — specifically, understand what actually drives sales up or down, not just track the totals.</p>
+          </div>
+          <div class="case-block">
+            <h4>What I Built</h4>
+            <p>A Power BI report combining sales/revenue trends, a full returns and orders log, and Power BI's Key Influencers visual to statistically test which factors move average sales, alongside a 665-customer insight table.</p>
+          </div>
+          <div class="case-block insight">
+            <h4>Highlighted Data</h4>
+            <p>The Key Influencers analysis found unit price above $138.75 was the single strongest driver of a sales increase (+$3.98K on average) — a statistically grounded case for testing premium pricing on specific product lines, not a guess.</p>
+          </div>
+          <div class="case-block">
+            <h4>Value Delivered</h4>
+            <p>Gives merchandising and pricing teams a data-backed reason to test pricing strategy on specific categories, and a returns view that flags which products and customers are driving avoidable revenue loss.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag">Toolkit</span>
+          <h2>What I work with</h2>
+        </div>
+        <p class="sub">Core BI and analysis tools, plus the business skills that decide what to do with the output.</p>
+      </div>
+
+      <div class="skills-grid reveal">
+        <div class="skill-col">
+          <h4>Analysis &amp; Visualization</h4>
+          <ul>
+            <li>Power BI <span class="mono">●●●●●</span></li>
+            <li>DAX &amp; Power Query <span class="mono">●●●●○</span></li>
+            <li>Excel (Advanced) <span class="mono">●●●●●</span></li>
+            <li>Python — Pandas, NumPy <span class="mono">●●●○○</span></li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>Business &amp; Reporting</h4>
+          <ul>
+            <li>KPI Monitoring</li>
+            <li>Dashboard Development</li>
+            <li>Database Management</li>
+            <li>Market &amp; Competitor Research</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h4>Working With People</h4>
+          <ul>
+            <li>Stakeholder Communication</li>
+            <li>Project Management</li>
+            <li>Problem Solving</li>
+            <li>Leadership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section id="certs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="tag">Credentials</span>
+          <h2>Certifications</h2>
+        </div>
+        <p class="sub">Continuous, recent, and directly relevant to BI and analyst work.</p>
+      </div>
+      <div class="cert-row reveal">
+        <div class="cert-item">
+          <div><div class="name">Complete Guide to Power BI for Data Analysts</div><div class="issuer">Microsoft Press</div></div>
+          <div class="date">2025</div>
+        </div>
+        <div class="cert-item">
+          <div><div class="name">UI/UX Design Bootcamp</div><div class="issuer">Microsoft × Sprints</div></div>
+          <div class="date">2025</div>
+        </div>
+        <div class="cert-item">
+          <div><div class="name">Project Management Foundations</div><div class="issuer">LinkedIn Learning</div></div>
+          <div class="date">2025</div>
+        </div>
+        <div class="cert-item">
+          <div><div class="name">Career Catalyst Data Analysis Program</div><div class="issuer">Egyptian University of Informatics</div></div>
+          <div class="date">2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact-section" id="contact">
+    <div class="wrap">
+      <div class="eyebrow reveal">Let's Work Together</div>
+      <h2 class="reveal">Have a dataset that needs a story?</h2>
+      <p class="reveal">I'm open to Data Analyst and Business Analyst roles where the goal is turning reporting into real decisions. Let's talk about what you're working on.</p>
+      <div class="contact-cta reveal">
+        <a href="mailto:noureenntarek@gmail.com" class="btn btn-solid btn-lg">Email Me</a>
+        <a href="assets/Noureen_Tarek_CV.pdf" download class="btn btn-lg">Download CV</a>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:noureenntarek@gmail.com">noureenntarek@gmail.com</a>
+        <a href="tel:+201001860955">+20 100 186 0955</a>
+        <a href="https://linkedin.com/in/noureentarek" target="_blank" rel="noopener">linkedin.com/in/noureentarek</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Noureen Tarek. Built to show the work, not just list it.
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  if(toggle){
+    toggle.addEventListener('click', () => navList.classList.toggle('open'));
+    navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+  }
+
+  // Scroll reveal (with graceful fallback so content is never stuck invisible)
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // Safety net: force-reveal anything still hidden shortly after load
+    // (covers edge cases where IO doesn't fire, e.g. some capture/automation contexts)
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        revealEls.forEach(el => el.classList.add('in'));
+      }, 1200);
+    });
+  } else {
+    // No IntersectionObserver support: just show everything
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Hero chart line draw-in
+  const path = document.getElementById('chartPath');
+  if(path){
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+    requestAnimationFrame(() => {
+      path.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(.4,0,.2,1)';
+      path.style.strokeDashoffset = '0';
+    });
+    // dots at the path points
+    const pts = [[620,380],[700,300],[760,340],[830,220],[900,260],[970,150],[1040,190],[1110,110],[1180,150]];
+    const dotsG = document.getElementById('chartDots');
+    pts.forEach((p,i) => {
+      const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx', p[0]);
+      c.setAttribute('cy', p[1]);
+      c.setAttribute('r', 3);
+      c.style.opacity = 0;
+      c.style.transition = `opacity 0.3s ease ${0.15*i + 0.6}s`;
+      dotsG.appendChild(c);
+      setTimeout(()=>{ c.style.opacity = 1; }, 50);
+    });
+  }
+</script>
+
+</body>
+</html>
