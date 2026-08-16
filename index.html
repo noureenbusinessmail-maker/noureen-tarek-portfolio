@@ -399,6 +399,45 @@
   }
   .case-block.insight h4{color:var(--accent);}
 
+  /* ---------- VIDEO DEMO ---------- */
+  .video-demo{
+    padding:48px 0 8px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:8px;
+  }
+  .video-demo-label{
+    max-width:640px;
+    margin:0 auto 28px;
+    text-align:center;
+  }
+  .video-demo-label .domain-tag{
+    display:inline-block;
+    margin-bottom:12px;
+  }
+  .video-demo-label h4{
+    font-size:20px;
+    color:var(--navy-900);
+    margin-bottom:10px;
+  }
+  .video-demo-label p{
+    font-size:14.5px;
+    color:var(--slate);
+  }
+  .video-frame{
+    max-width:900px;
+    margin:0 auto;
+    border:1px solid var(--line);
+    background:var(--navy-900);
+    box-shadow:0 24px 48px -24px rgba(10,25,48,0.28);
+    padding:6px;
+  }
+  .video-frame video{
+    display:block;
+    width:100%;
+    height:auto;
+    background:#000;
+  }
+
   /* ---------- SKILLS SECTION ---------- */
   .skills-grid{
     display:grid;
@@ -743,6 +782,21 @@
             <h4>Value Delivered</h4>
             <p>Gives operations and pricing teams a fast read on where to prioritize driver supply, which vehicle segment to protect, and where lost demand is concentrated geographically.</p>
           </div>
+        </div>
+      </div>
+
+      <!-- CASE 2 VIDEO DEMO -->
+      <div class="video-demo reveal">
+        <div class="video-demo-label">
+          <span class="domain-tag">Watch It In Action</span>
+          <h4>Full click-through of the Ride-Hailing Operations Dashboard</h4>
+          <p>Slicers, page navigation, and drill-downs — recorded live to show how the report actually behaves, not just what it looks like.</p>
+        </div>
+        <div class="video-frame">
+          <video controls preload="metadata" poster="assets/uber_demo_poster.jpg" playsinline>
+            <source src="assets/uber_demo.mp4" type="video/mp4">
+            Your browser doesn't support embedded video. <a href="assets/uber_demo.mp4">Download the recording</a> instead.
+          </video>
         </div>
       </div>
 
